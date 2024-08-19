@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -27,7 +28,7 @@ export default function Home() {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          I'm a passionate web developer creating modern and responsive websites.
+          I&apos;m a passionate web developer creating modern and responsive websites.
         </p>
         <button 
           className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300"
@@ -77,7 +78,14 @@ export default function Home() {
               data-aos="fade-up"
               data-aos-delay={project * 100}
             >
-              <img src={`https://source.unsplash.com/random/800x600?sig=${project}`} alt={`Project ${project}`} className="w-full h-48 object-cover" />
+              <div className="relative w-full h-48">
+                <Image 
+                  src={`https://source.unsplash.com/random/800x600?sig=${project}`} 
+                  alt={`Project ${project}`} 
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Project {project}</h3>
                 <p className="text-gray-400 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
