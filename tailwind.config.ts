@@ -13,8 +13,10 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      // ඔබට අවශ්‍ය වෙනත් custom theme සැකසුම් මෙතැන එකතු කරන්න
     },
   },
   plugins: [],
 };
+
 export default config;
