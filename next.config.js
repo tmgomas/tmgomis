@@ -1,11 +1,6 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ['source.unsplash.com'],
-  },
-}
-
-module.exports = nextConfig
+  // Add your Next.js config options here
+};
 
 module.exports = nextConfig;

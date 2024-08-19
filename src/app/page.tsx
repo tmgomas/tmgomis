@@ -5,6 +5,13 @@ import Image from 'next/image';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+const projectImages = [
+  '/images/project1.jpg',
+  '/images/project2.jpg',
+  '/images/project3.jpg',
+  '/images/project4.jpg',
+];
+
 export default function Home() {
   useEffect(() => {
     AOS.init({
@@ -71,23 +78,23 @@ export default function Home() {
           Recent Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {[1, 2, 3, 4].map((project) => (
+          {projectImages.map((imgSrc, index) => (
             <div 
-              key={project}
+              key={imgSrc}
               className="bg-gray-700 rounded-lg overflow-hidden shadow-lg"
               data-aos="fade-up"
-              data-aos-delay={project * 100}
+              data-aos-delay={index * 100}
             >
               <div className="relative w-full h-48">
                 <Image 
-                  src={`https://source.unsplash.com/random/800x600?sig=${project}`} 
-                  alt={`Project ${project}`} 
-                  layout="fill"
-                  objectFit="cover"
+                  src={imgSrc} 
+                  alt={`Project ${index + 1}`} 
+                  fill
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Project {project}</h3>
+                <h3 className="text-xl font-semibold mb-2">Project {index + 1}</h3>
                 <p className="text-gray-400 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <a href="#" className="text-blue-400 hover:text-blue-300">Learn More &rarr;</a>
               </div>
